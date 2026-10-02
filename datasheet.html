@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datasheet | Chinese Queer Corpus (CQC)</title>
+    <meta name="description" content="Datasheet for the Chinese Queer Corpus: motivation, composition, collection, preprocessing, uses, distribution, maintenance, and limitations.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header>
+        <p class="site-title"><a href="index.html">CHINESE QUEER CORPUS</a></p>
+        <p class="site-subtitle">CQC · 中文酷儿语音语料库 · Mandarin speech, gender, and sexuality</p>
+        <nav aria-label="Main">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="corpus.html">Corpus</a></li>
+                <li><a href="research.html">For Researchers</a></li>
+                <li><a href="access.html">Data Access</a></li>
+                <li><a href="ethics.html">Ethics</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="zh.html">中文</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="content-section">
+            <h1>Datasheet</h1>
+            <p class="lead">This datasheet documents CQC Release 1.0, following the questions proposed in <a href="https://doi.org/10.1145/3458723">Datasheets for Datasets</a> (Gebru et al., 2021).</p>
+            <p>Sections: <a href="#motivation">Motivation</a> · <a href="#composition">Composition</a> · <a href="#collection">Collection</a> · <a href="#preprocessing">Preprocessing</a> · <a href="#uses">Uses</a> · <a href="#distribution">Distribution</a> · <a href="#maintenance">Maintenance</a></p>
+        </section>
+
+        <section class="content-section" id="motivation">
+            <h2>Motivation</h2>
+            <p>CQC was created to support research on Mandarin speech, gender, and sexuality. Existing Mandarin speech corpora record gender, if at all, as a binary label, and research on gender, sexuality, and the voice has focused on English and a few other languages. CQC was built by the CQC Research Team for research purposes.</p>
+        </section>
+
+        <section class="content-section" id="composition">
+            <h2>Composition</h2>
+            <ul class="list">
+                <li>54 speakers, ≈10.5 hours of speech, 5,183 transcribed segments.</li>
+                <li>Each speaker described themselves as a member of a gender or sexual minority community in their own public content.</li>
+                <li>Speaker-level fields: self-label (verbatim), gender identity, trans status, sex characteristics, sexual orientation, identity evidence, age and Mandarin variety where stated. Fields not stated by the speaker are coded <em>not stated</em>.</li>
+                <li>Session-level fields: genre, voice-training content, environment, number of speakers.</li>
+                <li>The corpus contains information about sexual orientation and gender identity, which is sensitive. It contains no names, channel names, video titles, or images.</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="collection">
+            <h2>Collection</h2>
+            <ul class="list">
+                <li>Source: public videos on Bilibili and YouTube, found with Chinese and English search terms.</li>
+                <li>Inclusion required explicit self-description, Mandarin speech, adequate recording quality, and at least five minutes of usable speech.</li>
+                <li>Speakers were not contacted, and individual consent was not obtained. This is why the corpus is under controlled access, and why removal is available on request.</li>
+                <li>The project was reviewed by the authors’ institutional review board.</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="preprocessing">
+            <h2>Preprocessing</h2>
+            <ul class="list">
+                <li>Audio converted to 16 kHz mono; two-speaker recordings diarized with pyannote.audio and checked by hand.</li>
+                <li>Transcribed with Whisper; all segments reviewed by trained annotators; 3,329 of 5,183 segments (64.2%, 95% CI 62.9–65.5%) accepted without change.</li>
+                <li>Text converted to simplified characters, punctuation removed.</li>
+                <li>Words and phones aligned with the Montreal Forced Aligner (pretrained Mandarin model).</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="uses">
+            <h2>Uses</h2>
+            <h3>Intended</h3>
+            <p>Phonetic, sociophonetic, sociolinguistic, and social-scientific research; aggregate evaluation of speech technology across speakers.</p>
+            <h3>Prohibited</h3>
+            <p>Inferring or classifying identity from speech, text, or metadata; identifying or contacting speakers; voice cloning or synthesis; commercial use; redistribution. See the <a href="agreement.html">Data Use Agreement</a>.</p>
+        </section>
+
+        <section class="content-section" id="distribution">
+            <h2>Distribution</h2>
+            <p>Documentation and aggregate statistics are public on this website. Transcripts, TextGrids, metadata, and source timestamps with download scripts are provided to approved researchers under the Data Use Agreement. Audio files, channel names, and video titles are not distributed.</p>
+        </section>
+
+        <section class="content-section" id="maintenance">
+            <h2>Maintenance</h2>
+            <ul class="list">
+                <li>Maintained by the CQC Research Team; contact <a href="mailto:chinesequeercorpus@outlook.com">chinesequeercorpus@outlook.com</a>.</li>
+                <li>Sources are re-checked before each release; material whose source was deleted or made private is removed.</li>
+                <li>Removal requests are handled as described on the <a href="ethics.html#removal">Ethics</a> page; approved users are notified and must delete removed material.</li>
+                <li>Every release is numbered and listed on the <a href="corpus.html#releases">Corpus</a> page with its changes.</li>
+                <li>Known limitations are listed on the <a href="corpus.html#limitations">Corpus</a> page.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Chinese Queer Corpus (CQC) · Release 1.0 · <a href="mailto:chinesequeercorpus@outlook.com">chinesequeercorpus@outlook.com</a></p>
+        <p>Website text CC BY-NC 4.0 · Corpus data only under the <a href="agreement.html">CQC Data Use Agreement</a></p>
+        <p>Last updated October 2026</p>
+    </footer>
+</body>
+</html>

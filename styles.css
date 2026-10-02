@@ -534,3 +534,88 @@ footer a {
         display: none;
     }
 }
+
+/* ==========================================================
+   Additions for Release 1.0 (hero, principle line, overview
+   table, checklist). Appended to the original stylesheet.
+   ========================================================== */
+.hero h1 {
+    margin-bottom: 8px;
+}
+
+.tagline {
+    font-size: 15px;
+    color: var(--text-faint);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+.hero-actions {
+    margin: 8px 0 20px;
+}
+
+.meta-line {
+    font-size: 14px;
+    color: var(--text-faint);
+    letter-spacing: 0.04em;
+    margin-bottom: 0;
+}
+
+.principle {
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+
+p.small {
+    font-size: 14px;
+    color: var(--text-faint);
+    margin-bottom: 12px;
+}
+
+table.overview th {
+    width: 32%;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-size: 15px;
+    border-bottom: 1px solid var(--rule);
+}
+
+ul.checklist {
+    list-style: none;
+    margin: 0 0 24px;
+}
+
+ul.checklist li {
+    position: relative;
+    padding: 0 0 12px 32px;
+    color: var(--text-soft);
+    font-size: 17px;
+}
+
+ul.checklist li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #333;
+}
+
+@media (max-width: 600px) {
+    .principle {
+        font-size: 24px;
+    }
+    .hero-actions .button {
+        display: block;
+        text-align: center;
+        margin-right: 0;
+    }
+    ul.checklist li {
+        font-size: 16px;
+    }
+}

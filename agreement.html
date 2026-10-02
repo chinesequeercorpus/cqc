@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Use Agreement | Chinese Queer Corpus (CQC)</title>
-    <meta name="description" content="Full text of the Chinese Queer Corpus Data Use Agreement.">
+    <meta name="description" content="Terms of the Chinese Queer Corpus Data Use Agreement.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header>
         <p class="site-title"><a href="index.html">CHINESE QUEER CORPUS</a></p>
-        <p class="site-subtitle">CQC · 中文酷儿语音语料库 · A Mandarin speech corpus</p>
+        <p class="site-subtitle">CQC · 中文酷儿语音语料库 · Mandarin speech, gender, and sexuality</p>
         <nav aria-label="Main">
             <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="corpus.html">The Corpus</a></li>
-            <li><a href="access.html">Data Access</a></li>
-            <li><a href="ethics.html">Ethics &amp; Speakers</a></li>
-            <li><a href="about.html">Team &amp; Citation</a></li>
-            <li><a href="zh.html">中文</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="corpus.html">Corpus</a></li>
+                <li><a href="research.html">For Researchers</a></li>
+                <li><a href="access.html">Data Access</a></li>
+                <li><a href="ethics.html">Ethics</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="zh.html">中文</a></li>
             </ul>
         </nav>
     </header>
@@ -28,15 +29,16 @@
         <section class="content-section agreement">
             <h1>Data Use Agreement</h1>
             <p class="lead">Chinese Queer Corpus (CQC) Data Use Agreement, version 1.0</p>
-            <div class="note"><p>This page reproduces the agreement for reading. The signed version is sent with an approved application. <span class="todo">[TODO: remove this line if not needed]</span></p></div>
-            <p>This Agreement is between the CQC Data Custodian (<span class="todo">[TODO: name, University at Buffalo]</span>) (“Custodian”) and the Recipient named in the signed application, together with the Recipient’s institution (“Institution”).</p>
+            <div class="note"><p>This page sets out the terms for prospective applicants. After approval, the executed agreement is sent for signature by authorized representatives of both institutions.</p></div>
+            <p>This Agreement is between the CQC Research Team as data custodian (“Custodian”) and the Recipient named in the signed application, together with the Recipient’s institution (“Institution”).</p>
 
             <h3>1. Definitions</h3>
             <ol>
                 <li><strong>Speaker</strong>: any person whose voice appears in a CQC source recording.</li>
-                <li><strong>Public Materials</strong>: documentation, datasheet, annotation schema, code, and aggregate statistics. These are not covered by this Agreement.</li>
-                <li><strong>Controlled Data</strong>: transcripts, TextGrids, speaker- and session-level metadata (including identity fields and self-labels), source identifiers, timestamps, download scripts, any audio obtained with them, and any acoustic measurements made at speaker, segment, or frame level.</li>
-                <li><strong>Derived Data</strong>: any data, annotations, models, or features created from Controlled Data.</li>
+                <li><strong>Public Materials</strong>: this website, the datasheet, annotation scheme, and aggregate statistics. These are not covered by this Agreement.</li>
+                <li><strong>Controlled Data</strong>: transcripts, TextGrids, speaker- and session-level metadata (including identity fields and self-labels), source identifiers, timestamps, download scripts, and any audio obtained with them.</li>
+                <li><strong>Restricted Derived Data</strong>: any data created from Controlled Data at the level of individual speakers, sessions, segments, or frames (for example per-speaker acoustic measurements or re-annotations), and any data that could identify a Speaker or reconstruct Controlled Data.</li>
+                <li><strong>Aggregate Results</strong>: group-level statistics, model estimates, tables, and figures of distributions that meet Section 5.1. Aggregate Results are not Restricted Derived Data.</li>
                 <li><strong>Authorized Users</strong>: the Recipient and the named team members listed in the application, each of whom has read this Agreement.</li>
             </ol>
 
@@ -55,35 +57,36 @@
                 <li>Contact any Speaker in connection with CQC.</li>
                 <li>Use any Speaker’s voice for voice cloning, speech synthesis, voice conversion, or the training of generative speech models.</li>
                 <li>Use Controlled Data for commercial purposes, surveillance, law enforcement, immigration control, content moderation targeting individuals, or any decision about an individual.</li>
-                <li>Redistribute, sublicense, sell, or publish Controlled Data, or Derived Data that could reconstruct it, including by uploading to public repositories or model hubs, or by entering it into third-party AI services that retain data.</li>
+                <li>Redistribute, sublicense, sell, or publish Controlled Data or Restricted Derived Data, including by uploading them to public repositories or model hubs, or by entering them into third-party AI services that retain data.</li>
                 <li>Publish anything that discloses, or could reasonably reveal, a Speaker’s identity together with an identity attribute.</li>
             </ol>
 
             <h3>4. Security</h3>
             <ol>
-                <li>Controlled Data shall be stored on encrypted, access-controlled systems at the Institution and accessed only by Authorized Users.</li>
+                <li>Controlled Data and Restricted Derived Data shall be stored on encrypted, access-controlled systems at the Institution and accessed only by Authorized Users.</li>
                 <li>Recipient shall notify the Custodian within 72 hours of any suspected unauthorized access, use, or disclosure, and cooperate in remediation.</li>
             </ol>
 
             <h3>5. Publication</h3>
             <ol>
-                <li>Results may be published in aggregate. Group-level statistics shall not be reported for groups of fewer than <span class="todo">[TODO: 3]</span> speakers unless the Speakers cannot be distinguished.</li>
-                <li>Audio clips, spectrograms of identifiable stretches, or verbatim quotations longer than <span class="todo">[TODO: 20 characters]</span> require prior written permission from the Custodian.</li>
+                <li>Aggregate Results may be published. Group-level statistics shall not be reported for groups of fewer than 3 speakers unless the Speakers cannot be distinguished.</li>
+                <li>Audio clips, and spectrograms, waveforms, or pitch tracks of an individual Speaker’s speech, require prior written permission from the Custodian, because such figures can be used to recover or recognize a voice. Figures of aggregate distributions need no permission.</li>
+                <li>Verbatim quotations longer than 20 Chinese characters require prior written permission, because longer quotations can be searched to locate source videos.</li>
                 <li>Speakers shall be referred to only by CQC speaker IDs.</li>
-                <li>Publications shall cite CQC as described on the <a href="about.html#cite">Team &amp; Citation</a> page and state that the data were used under this Agreement.</li>
+                <li>Publications shall cite the CQC release used, as described on the <a href="about.html#cite">About</a> page, and state that the data were used under this Agreement.</li>
             </ol>
 
             <h3>6. Updates and removal</h3>
             <ol>
                 <li>The Custodian removes material when a Speaker requests it or when a source becomes unavailable, and issues updated releases.</li>
-                <li>Within 30 days of a removal notice, Recipient shall delete the affected Controlled Data and Derived Data that contain it, and confirm deletion in writing. Aggregate results already published need not be withdrawn.</li>
+                <li>Within 30 days of a removal notice, Recipient shall delete the affected Controlled Data and any Restricted Derived Data containing it, and confirm deletion in writing. Aggregate Results already published need not be withdrawn.</li>
                 <li>Recipient shall use the most recent release for new analyses.</li>
             </ol>
 
             <h3>7. Term and termination</h3>
             <ol>
-                <li>This Agreement runs for <span class="todo">[TODO: 3]</span> years from approval and may be renewed.</li>
-                <li>At the end of the term or the project, or upon breach, Recipient shall delete all Controlled Data and Derived Data and confirm in writing, except data that must be retained for research integrity, which remain under this Agreement.</li>
+                <li>This Agreement runs for 3 years from approval and may be renewed.</li>
+                <li>At the end of the term or the project, or upon breach, Recipient shall delete all Controlled Data and Restricted Derived Data and confirm in writing. Aggregate Results may be kept.</li>
                 <li>The Custodian may suspend access and notify the Recipient’s Institution of a breach.</li>
             </ol>
 
@@ -92,15 +95,15 @@
                 <li>Controlled Data are provided as is, without warranty of accuracy or fitness for any purpose.</li>
                 <li>Recipient is responsible for obtaining any ethics approval required by its Institution and for complying with the laws that apply to it.</li>
                 <li>This Agreement does not transfer any copyright in source recordings, which remains with the rights holders.</li>
-                <li>Governing law: <span class="todo">[TODO: as advised by UB counsel]</span>.</li>
+                <li>The executed agreement specifies governing law and the authorized signatories, and prevails over this page.</li>
             </ol>
         </section>
     </main>
 
     <footer>
-        <p>Chinese Queer Corpus (CQC) · <a href="mailto:chinesequeercorpus@outlook.com">chinesequeercorpus@outlook.com</a></p>
-        <p>Website text CC BY-NC 4.0 · Corpus data available only under the <a href="agreement.html">CQC Data Use Agreement</a></p>
-        <p>Last updated <span class="todo">[TODO: month year]</span></p>
+        <p>Chinese Queer Corpus (CQC) · Release 1.0 · <a href="mailto:chinesequeercorpus@outlook.com">chinesequeercorpus@outlook.com</a></p>
+        <p>Website text CC BY-NC 4.0 · Corpus data only under the <a href="agreement.html">CQC Data Use Agreement</a></p>
+        <p>Last updated October 2026</p>
     </footer>
 </body>
 </html>
