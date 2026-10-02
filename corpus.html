@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Corpus | Chinese Queer Corpus (CQC)</title>
+    <meta name="description" content="How the Chinese Queer Corpus was built: sources, annotation scheme, processing pipeline, and corpus statistics.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header>
+        <p class="site-title"><a href="index.html">CHINESE QUEER CORPUS</a></p>
+        <p class="site-subtitle">CQC · 中文酷儿语音语料库 · A Mandarin speech corpus</p>
+        <nav aria-label="Main">
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="corpus.html" aria-current="page">The Corpus</a></li>
+            <li><a href="access.html">Data Access</a></li>
+            <li><a href="ethics.html">Ethics &amp; Speakers</a></li>
+            <li><a href="about.html">Team &amp; Citation</a></li>
+            <li><a href="zh.html">中文</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="content-section">
+            <h1>The Corpus</h1>
+            <p class="lead">CQC contains about 10.5 hours of Mandarin speech from 54 speakers, drawn from publicly available recordings on Bilibili and YouTube, transcribed and aligned at word and phone levels.</p>
+            <p>Contents: <a href="#sources">Sources</a> · <a href="#annotation">Annotation</a> · <a href="#processing">Processing</a> · <a href="#statistics">Statistics</a> · <a href="#limitations">Limitations</a></p>
+        </section>
+
+        <section class="content-section" id="sources">
+            <h2>Sources and inclusion</h2>
+            <p>Speakers were found on Bilibili and YouTube using Chinese and English search terms for gender and sexual minority identities. A speaker was included only if they explicitly described themselves this way in their own videos or public profile.</p>
+            <ul class="list">
+                <li>Mandarin speech, including regional varieties; other Chinese languages such as Cantonese were excluded.</li>
+                <li>At most two people speaking; only the target speaker’s speech is included.</li>
+                <li>Recordings with persistent background music, canned laughter, heavy noise, or heavy overlap were excluded.</li>
+                <li>At least five minutes of usable speech per speaker.</li>
+            </ul>
+            <p>To protect speakers, we do not publish the names of channels or videos.</p>
+        </section>
+
+        <section class="content-section" id="annotation">
+            <h2>Annotation scheme</h2>
+            <p>Identity is recorded in separate fields, because gender identity, trans status, sex characteristics, and sexual orientation are different things. Each speaker’s own words are kept as they said them, because Chinese community terms do not map neatly onto English categories. Anything a speaker did not state publicly is recorded as <em>not stated</em>.</p>
+            <div class="table-wrap">
+                <table>
+                    <caption>Annotation fields</caption>
+                    <thead><tr><th>Level</th><th>Field</th><th>Values</th></tr></thead>
+                    <tbody>
+                        <tr><td>Speaker</td><td>Self-label</td><td>Verbatim, e.g. 跨性别女性, 男同, 无性恋</td></tr>
+                        <tr><td>Speaker</td><td>Gender identity</td><td>woman, man, non-binary, other, not stated</td></tr>
+                        <tr><td>Speaker</td><td>Trans status</td><td>trans, cis, not stated</td></tr>
+                        <tr><td>Speaker</td><td>Sex characteristics</td><td>intersex, not stated</td></tr>
+                        <tr><td>Speaker</td><td>Sexual orientation</td><td>gay, lesbian, bisexual, pansexual, asexual, heterosexual, other, not stated</td></tr>
+                        <tr><td>Speaker</td><td>Identity evidence</td><td>own video or own profile, with date</td></tr>
+                        <tr><td>Speaker</td><td>Age, Mandarin variety</td><td>only if self-stated</td></tr>
+                        <tr><td>Session</td><td>Speech genre</td><td>scripted, semi-structured, spontaneous</td></tr>
+                        <tr><td>Session</td><td>Voice-training content</td><td>yes / no</td></tr>
+                        <tr><td>Recording</td><td>Environment, number of speakers</td><td>indoor / outdoor; 1 or 2</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section" id="processing">
+            <h2>Processing</h2>
+            <ol class="steps">
+                <li><strong>Audio preparation</strong>Converted to 16 kHz mono WAV.</li>
+                <li><strong>Speaker diarization</strong>Two-speaker recordings separated with pyannote.audio; target-speaker segments checked by hand.</li>
+                <li><strong>Transcription</strong>Automatic transcription with Whisper, then reviewed by three trained annotators; 5,183 segments were reviewed.</li>
+                <li><strong>Normalization</strong>Simplified characters, punctuation removed; mixed English and digits handled as documented in the user guide.</li>
+                <li><strong>Forced alignment</strong>Word and phone boundaries with the Montreal Forced Aligner, producing Praat TextGrids.</li>
+            </ol>
+            <p>Quality figures (error rates and alignment accuracy) are reported in the corpus paper and user guide. Processing code is available in our GitHub repository: <span class="todo">[TODO: add link]</span>.</p>
+        </section>
+
+        <section class="content-section" id="statistics">
+            <h2>Statistics</h2>
+            <h3>Speech per speaker</h3>
+        <div class="bars">
+            <div class="bar-row"><span>5–10 min</span><div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div><span class="count">26</span></div>
+            <div class="bar-row"><span>10–20 min</span><div class="bar-track"><div class="bar-fill" style="width:76.9%"></div></div><span class="count">20</span></div>
+            <div class="bar-row"><span>20–30 min</span><div class="bar-track"><div class="bar-fill" style="width:23.1%"></div></div><span class="count">6</span></div>
+            <div class="bar-row"><span>&gt; 30 min</span><div class="bar-track"><div class="bar-fill" style="width:7.7%"></div></div><span class="count">2</span></div>
+        </div>
+            <h3>Sexual orientation (self-stated)</h3>
+        <div class="bars">
+            <div class="bar-row"><span>Gay</span><div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div><span class="count">20</span></div>
+            <div class="bar-row"><span>Asexual</span><div class="bar-track"><div class="bar-fill" style="width:25.0%"></div></div><span class="count">5</span></div>
+            <div class="bar-row"><span>Heterosexual</span><div class="bar-track"><div class="bar-fill" style="width:20.0%"></div></div><span class="count">4</span></div>
+            <div class="bar-row"><span>Pansexual</span><div class="bar-track"><div class="bar-fill" style="width:20.0%"></div></div><span class="count">4</span></div>
+            <div class="bar-row"><span>Lesbian</span><div class="bar-track"><div class="bar-fill" style="width:15.0%"></div></div><span class="count">3</span></div>
+            <div class="bar-row"><span>Bisexual</span><div class="bar-track"><div class="bar-fill" style="width:5.0%"></div></div><span class="count">1</span></div>
+            <div class="bar-row"><span>Not stated</span><div class="bar-track"><div class="bar-fill" style="width:85.0%"></div></div><span class="count">17</span></div>
+        </div>
+            <h3>Gender identity and trans status (self-stated)</h3>
+            <div class="table-wrap">
+                <table>
+                    <caption>Each field is counted separately; a trans woman is counted as “woman” and as “trans”</caption>
+                    <thead><tr><th>Field</th><th>Value</th><th class="num">Speakers</th></tr></thead>
+                    <tbody>
+                        <tr><td>Gender identity</td><td>Man</td><td class="num"><span class="todo">[TODO: n]</span></td></tr>
+                        <tr><td></td><td>Woman</td><td class="num"><span class="todo">[TODO: n]</span></td></tr>
+                        <tr><td></td><td>Non-binary</td><td class="num">1</td></tr>
+                        <tr><td></td><td>Not stated</td><td class="num"><span class="todo">[TODO: n]</span></td></tr>
+                        <tr><td>Trans status</td><td>Trans</td><td class="num"><span class="todo">[TODO: n]</span></td></tr>
+                        <tr><td></td><td>Cis (self-stated)</td><td class="num"><span class="todo">[TODO: n]</span></td></tr>
+                        <tr><td></td><td>Not stated</td><td class="num"><span class="todo">[TODO: n]</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Most recordings are semi-structured speech such as interviews, podcasts, and topical vlogs. Exact ages are known for five speakers (21–74); for the rest, age was not stated and is not estimated.</p>
+        </section>
+
+        <section class="content-section" id="limitations">
+            <h2>Limitations</h2>
+            <ul class="list">
+                <li>The corpus reflects who speaks publicly online: cis women, bisexual, non-binary, and older speakers are few.</li>
+                <li>Most speech is semi-structured; scripted and spontaneous speech are limited.</li>
+                <li>Recording conditions vary, as in any collection of online media.</li>
+                <li>Categories are only as complete as what speakers chose to say about themselves.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Chinese Queer Corpus (CQC) · <a href="mailto:your-cqc-address@outlook.com">your-cqc-address@outlook.com</a></p>
+        <p>Website text CC BY-NC 4.0 · Corpus data available only under the <a href="agreement.html">CQC Data Use Agreement</a></p>
+        <p>Last updated <span class="todo">[TODO: month year]</span></p>
+    </footer>
+</body>
+</html>
