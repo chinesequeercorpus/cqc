@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corpus | Chinese Queer Corpus (CQC)</title>
+    <meta name="description" content="Documentation of the Chinese Queer Corpus: sources, inclusion criteria, metadata and annotation, processing, data quality, statistics, and limitations.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header>
+        <p class="site-title"><a href="index.html">CHINESE QUEER CORPUS</a></p>
+        <p class="site-subtitle">CQC · 中文酷儿语料库 · Mandarin speech, sex, gender, and sexuality</p>
+        <nav aria-label="Main">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="corpus.html" aria-current="page">Corpus</a></li>
+                <li><a href="research.html">For Researchers</a></li>
+                <li><a href="access.html">Data Access</a></li>
+                <li><a href="ethics.html">Ethics</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="zh.html">中文</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="content-section">
+            <h1>Corpus</h1>
+            <p class="lead">CQC Release 1.0 contains about 10.5 hours of Mandarin speech from 54 speakers, drawn from public Bilibili and YouTube videos, transcribed and time-aligned at the level of words and individual speech sounds.</p>
+            <p>On this page: <a href="#terms">Key terms</a> · <a href="#overview">Overview</a> · <a href="#selection">Sources and inclusion</a> · <a href="#annotation">Metadata and annotation</a> · <a href="#processing">Processing</a> · <a href="#quality">Data quality</a> · <a href="#statistics">Statistics</a> · <a href="#limitations">Limitations</a> · <a href="#releases">Releases</a></p>
+        </section>
+
+        <section class="content-section" id="terms">
+            <h2>Key terms</h2>
+            <p>This page uses a few technical terms. Each is explained once here.</p>
+            <div class="table-wrap">
+                <table class="overview">
+                    <tbody>
+                        <tr><th scope="row">Speech corpus</th><td>A collection of recordings, organized and annotated for research.</td></tr>
+                        <tr><th scope="row">Transcription</th><td>Writing down what is said in a recording, word for word.</td></tr>
+                        <tr><th scope="row">Phone</th><td>A single speech sound, such as the <em>m</em> or the <em>a</em> in 妈 <em>mā</em>.</td></tr>
+                        <tr><th scope="row">Forced alignment</th><td>Automatically marking where each word and each speech sound begins and ends in the recording.</td></tr>
+                        <tr><th scope="row">TextGrid</th><td>The file format that stores these time marks; it opens in the free program Praat.</td></tr>
+                        <tr><th scope="row">Speaker diarization</th><td>Automatically working out who is speaking when, in a recording with more than one speaker.</td></tr>
+                        <tr><th scope="row">Pitch (F0)</th><td>How high or low a voice sounds.</td></tr>
+                        <tr><th scope="row">Metadata</th><td>Information that describes the speakers, recordings, and corpus, rather than the speech itself.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section" id="overview">
+            <h2>Overview</h2>
+            <div class="table-wrap">
+                <table class="overview">
+                    <tbody>
+                        <tr><th scope="row">Language</th><td>Mandarin Chinese, including regional varieties</td></tr>
+                        <tr><th scope="row">Speakers</th><td>54</td></tr>
+                        <tr><th scope="row">Speech</th><td>≈10.5 hours</td></tr>
+                        <tr><th scope="row">Sources</th><td>Public videos on Bilibili and YouTube</td></tr>
+                        <tr><th scope="row">Speech genres</th><td>Mostly semi-structured: interviews, podcasts, topical vlogs</td></tr>
+                        <tr><th scope="row">Transcription</th><td>Automatic transcription (Whisper), reviewed by trained annotators</td></tr>
+                        <tr><th scope="row">Time alignment</th><td>Word and phone level, produced automatically (Montreal Forced Aligner) and checked by hand, stored as Praat TextGrids</td></tr>
+                        <tr><th scope="row">Identity metadata</th><td>Self-described only; separate fields for gender identity, trans status, sex characteristics, and sexual orientation</td></tr>
+                        <tr><th scope="row">Access</th><td>Controlled, under the <a href="agreement.html">CQC Data Use Agreement</a></td></tr>
+                        <tr><th scope="row">Documentation</th><td><a href="datasheet.html">Datasheet</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3>Units</h3>
+            <ul class="list">
+                <li><strong>Speaker</strong>: an individual whose speech is represented in CQC, identified only by a CQC speaker ID.</li>
+                <li><strong>Source recording</strong>: the original public video.</li>
+                <li><strong>Session</strong>: the speech of one CQC speaker taken from one source recording. Genre is coded per session.</li>
+                <li><strong>Segment</strong>: a stretch of a session that is transcribed and aligned.</li>
+            </ul>
+            <p>A speaker may contribute several sessions. Report speakers, sessions, and segments separately in analyses.</p>
+        </section>
+
+        <section class="content-section" id="selection">
+            <h2>Sources and inclusion</h2>
+            <p>Each speaker passed every step below. To protect speakers, we do not publish the names of channels or videos.</p>
+            <ol class="steps">
+                <li><strong>Candidate discovery</strong>Searches on Bilibili and YouTube with Chinese and English terms for sexual and gender minority identities.</li>
+                <li><strong>Self-description screening</strong>Kept only speakers who explicitly described themselves as members of sexual or gender minority communities in their own videos or public profile.</li>
+                <li><strong>Language</strong>Mandarin speech, including regional varieties; other Chinese languages such as Cantonese excluded.</li>
+                <li><strong>Recording quality</strong>At most two people speaking; no persistent background music, canned laughter, heavy noise, or heavy overlap.</li>
+                <li><strong>Speaker inclusion</strong>At least five minutes of usable speech per speaker; only the target speaker’s speech is included.</li>
+            </ol>
+        </section>
+
+        <section class="content-section" id="annotation">
+            <h2>Metadata and annotation</h2>
+            <p>Gender identity, trans status, sex characteristics, and sexual orientation are different things, so each is recorded in its own field. CQC also keeps each speaker’s own words as they said them, because Chinese community terms do not map neatly onto English categories. The two serve different purposes: the self-label records how a speaker describes themselves, and the fields organize that information for analysis. Neither replaces the other.</p>
+            <div class="note">
+                <p><strong>Not stated does not mean absent.</strong> A field is marked <em>not stated</em> whenever the speaker did not say it explicitly in the material we reviewed. We do not infer missing information from appearance, voice, biography, or any other source. For example, “not stated” under sex characteristics does not mean “not intersex,” and a speaker is coded cis only if they said so.</p>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <caption>Annotation fields</caption>
+                    <thead><tr><th>Level</th><th>Field</th><th>Values</th></tr></thead>
+                    <tbody>
+                        <tr><td>Speaker</td><td>Self-label</td><td>Verbatim, e.g. 酷儿, 无性恋, 跨性别</td></tr>
+                        <tr><td>Speaker</td><td>Gender identity</td><td>woman, man, non-binary, other, not stated</td></tr>
+                        <tr><td>Speaker</td><td>Trans status</td><td>trans, cis, not stated</td></tr>
+                        <tr><td>Speaker</td><td>Sex characteristics</td><td>intersex, not stated</td></tr>
+                        <tr><td>Speaker</td><td>Sexual orientation</td><td>gay, lesbian, bisexual, pansexual, asexual, heterosexual, other, not stated</td></tr>
+                        <tr><td>Speaker</td><td>Mandarin variety</td><td>only if self-stated</td></tr>
+                        <tr><td>Session</td><td>Speech genre</td><td>scripted, semi-structured, spontaneous</td></tr>
+                        <tr><td>Session</td><td>Recording conditions</td><td>indoor / outdoor; number of speakers (1 or 2)</td></tr>
+                        <tr><td>Segment</td><td>Transcription and alignment</td><td>Chinese characters; word and phone boundaries</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section" id="processing">
+            <h2>Processing</h2>
+            <ol class="steps">
+                <li><strong>Audio preparation</strong>Recordings converted to a single standard audio format (details in the datasheet).</li>
+                <li><strong>Separating speakers</strong>In two-speaker recordings, speaker diarization (pyannote.audio) separated the two voices; segments assigned to the target speaker were checked by hand.</li>
+                <li><strong>Transcription</strong>Speech transcribed automatically with Whisper, then reviewed by trained annotators.</li>
+                <li><strong>Text clean-up</strong>Transcripts converted to simplified characters; punctuation removed. Before transcripts are distributed, personal names, place names, and similar identifying details are replaced with placeholders such as ［人名］ and ［城市］.</li>
+                <li><strong>Time alignment</strong>Forced alignment with the Montreal Forced Aligner marked the start and end of each word and phone, producing Praat TextGrids; the boundaries were then checked by hand.</li>
+            </ol>
+        </section>
+
+        <section class="content-section" id="quality">
+            <h2>Data quality</h2>
+            <div class="table-wrap">
+                <table class="stack">
+                    <thead><tr><th>Step</th><th>What was checked</th><th>What to keep in mind</th></tr></thead>
+                    <tbody>
+                        <tr><td>Speaker separation</td><td>Target-speaker segments checked by hand.</td><td>Very short turns may still be misassigned.</td></tr>
+                        <tr><td>Transcription</td><td>All 5,183 segments reviewed by trained annotators; 64.2% of automatic transcripts were accepted without change.</td><td>Reviewed transcripts can still contain errors, especially in mixed Chinese–English speech.</td></tr>
+                        <tr><td>Time alignment</td><td>Produced automatically, then checked by hand.</td><td>Checked boundaries can still contain small errors; check them if your analysis relies on precise timing.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Further details are in the <a href="datasheet.html#preprocessing">datasheet</a>. Processing scripts are available on request.</p>
+        </section>
+
+        <section class="content-section" id="statistics">
+            <h2>Statistics</h2>
+            <p class="small">All figures are percentages of the 54 speakers. Identity figures are based on how speakers described themselves, not on categories assigned by researchers.</p>
+            <h3>Speech per speaker</h3>
+            <div class="bars">
+                <div class="bar-row"><span>5–10 min</span><div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div><span class="count">48.1%</span></div>
+                <div class="bar-row"><span>10–20 min</span><div class="bar-track"><div class="bar-fill" style="width:76.9%"></div></div><span class="count">37.0%</span></div>
+                <div class="bar-row"><span>20–30 min</span><div class="bar-track"><div class="bar-fill" style="width:23.1%"></div></div><span class="count">11.1%</span></div>
+                <div class="bar-row"><span>&gt; 30 min</span><div class="bar-track"><div class="bar-fill" style="width:7.7%"></div></div><span class="count">3.7%</span></div>
+            </div>
+            <h3>Sex, gender, and sexuality</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; margin: 16px 0 32px;">
+                <img src="pie_gender.svg" alt="Pie chart, sex and gender identities: intersex 1.9%, woman 11.1%, man 40.7%, trans man (FTM) 18.5%, trans woman (MTF) 25.9%, non-binary 1.9%." style="display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: var(--r-lg); flex: 1 1 260px; min-width: 0;">
+                <img src="pie_orientation.svg" alt="Pie chart, sexual orientation: asexual 9.3%, pansexual 7.4%, bisexual 1.9%, lesbian 5.6%, gay 37.0%, heterosexual 7.4%, no information 31.5%." style="display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: var(--r-lg); flex: 1 1 260px; min-width: 0;">
+            </div>
+            <h3>Speaker embeddings</h3>
+            <figure style="margin: 16px 0 0;">
+                <img src="ecapa_embedding_space_dispersion.svg" alt="Box plot: for Male, Female, MTF and FTM, each speaker’s distance to the median of their category in the ECAPA embedding space" style="display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: var(--r-lg);">
+                <figcaption class="small" style="margin-top: 8px;">Dispersion in the ECAPA embedding space. Each point is one speaker’s distance to the median of their category; boxes show the distribution in each category. The spread within each category shows variation within groups.</figcaption>
+            </figure>
+            <h3>Other figures</h3>
+            <ul class="list">
+                <li>92.6% of speakers were recorded indoors.</li>
+            </ul>
+            <p class="small">To reduce the risk of identifying individual speakers, we do not publish detailed combinations of identity and Mandarin variety.</p>
+        </section>
+
+        <section class="content-section" id="limitations">
+            <h2>Limitations</h2>
+            <p>CQC includes speakers who met the inclusion criteria and who published relevant content on two video platforms. Who ends up in the corpus is therefore shaped by platform use, by who chooses to speak publicly, by the search terms used, and by recording quality. CQC is not a representative sample of Mandarin speakers or of queer communities. Report sample composition, group sizes, and limitations, and interpret results with care.</p>
+            <ul class="list">
+                <li><strong>Representation.</strong> Cis women, bisexual, non-binary, and older speakers are few.</li>
+                <li><strong>Platforms.</strong> Bilibili and YouTube users are not representative of Mandarin speakers in general.</li>
+                <li><strong>Publicness.</strong> CQC includes only people willing to speak publicly online about their identity.</li>
+                <li><strong>Genre.</strong> Most speech is semi-structured; scripted and spontaneous speech are limited.</li>
+                <li><strong>Geography.</strong> Speakers’ regional backgrounds are uneven and often not stated.</li>
+                <li><strong>Self-presentation.</strong> Public videos involve deliberate self-presentation for an audience, and speakers may adjust what they say to platform rules.</li>
+                <li><strong>Labels.</strong> Local identity labels do not always correspond to English categories; analytic categories simplify them.</li>
+                <li><strong>Time.</strong> Online speech and identity vocabulary change; recordings reflect when they were made.</li>
+                <li><strong>Recording conditions.</strong> Microphones, rooms, and compression vary, as in any collection of online media.</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="releases">
+            <h2>Releases</h2>
+            <p>Material may be removed between releases at speakers’ request. Always cite the release you used.</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Release</th><th>Date</th><th class="num">Speakers</th><th class="num">Hours</th><th>Changes</th></tr></thead>
+                    <tbody>
+                        <tr><td>1.0</td><td>October 2026</td><td class="num">54</td><td class="num">≈10.5</td><td>First release</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Chinese Queer Corpus (CQC) · Release 1.0 · <a href="mailto:chinesequeercorpus@outlook.com">chinesequeercorpus@outlook.com</a></p>
+        <p>Website text CC BY-NC 4.0 · Corpus data only under the <a href="agreement.html">CQC Data Use Agreement</a></p>
+        <p>Last updated October 2026</p>
+    </footer>
+</body>
+</html>

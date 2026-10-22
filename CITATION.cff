@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use the Chinese Queer Corpus, please cite the release you used."
+title: "Chinese Queer Corpus (CQC)"
+version: "1.0"
+date-released: 2026-10-01
+authors:
+  - name: "CQC Research Team"
+url: "https://chinesequeercorpus.github.io/cqc/"
+type: dataset

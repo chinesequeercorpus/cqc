@@ -1,0 +1,795 @@
+/* ==========================================================
+   Chinese Queer Corpus (CQC) — site stylesheet, v2
+   Helvetica Neue light, wide letter-spacing, uppercase h2,
+   hairlines, a cool white ground, and purple (#7b4f80) as the
+   single accent. Radius scale: controls 8px, cards 12px,
+   pills 999px.
+   ========================================================== */
+
+:root {
+    /* neutrals: cool white, slightly purple-biased greys */
+    --bg: #fbfafc;
+    --panel: #ffffff;
+    --ink: #1f1b22;          /* headings */
+    --text: #2f2a33;         /* body */
+    --text-soft: #57505c;    /* paragraphs */
+    --text-faint: #8a8290;   /* captions, meta */
+    --rule: #e8e3ec;         /* hairlines */
+    --rule-strong: #cfc6d6;
+    --tint: #f4f1f6;         /* fills: code, tracks */
+
+    /* accent: yam purple 薯紫 */
+    --accent: #7b4f80;
+    --accent-dark: #5f3c64;  /* hover on filled buttons */
+    --accent-mid: #cdb5cf;   /* link underlines, borders */
+    --accent-soft: #f5eef5;  /* notes, highlights */
+
+    --todo-bg: #fff3b0;
+
+    /* radius */
+    --r-sm: 8px;
+    --r-lg: 12px;
+    --r-pill: 999px;
+
+    --measure: 800px;
+    --font: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    --mono: 'SFMono-Regular', Menlo, Consolas, monospace;
+    color-scheme: light;
+}
+
+/* ---------- reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(123, 79, 128, 0.12);
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+::selection {
+    background: var(--accent-soft);
+    color: var(--ink);
+}
+
+/* ---------- skip link ---------- */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+}
+
+.skip-link:focus {
+    left: 16px;
+    top: 16px;
+    background: var(--accent);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: var(--r-sm);
+    z-index: 10;
+}
+
+/* ---------- header and navigation ---------- */
+header {
+    background-color: var(--panel);
+    text-align: center;
+    padding: 48px 16px 28px;
+    border-bottom: 1px solid var(--rule);
+}
+
+.site-title {
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-bottom: 6px;
+}
+
+.site-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-subtitle {
+    font-size: 15px;
+    color: var(--text-faint);
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 10px;
+}
+
+nav a {
+    display: inline-block;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: var(--r-pill);
+    transition: background-color 0.15s, color 0.15s;
+}
+
+nav a:hover {
+    color: var(--accent);
+    background: var(--accent-soft);
+}
+
+nav a[aria-current] {
+    color: #fff;
+    background: var(--accent);
+}
+
+/* ---------- main ---------- */
+main {
+    background-color: var(--panel);
+}
+
+.content-section {
+    padding: 72px 20px;
+    max-width: var(--measure);
+    margin: 0 auto;
+    border-bottom: 1px solid var(--rule);
+}
+
+.content-section:last-child {
+    border-bottom: none;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 24px;
+    text-wrap: balance;
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    line-height: 1.35;
+    color: var(--ink);
+    margin-bottom: 28px;
+    text-transform: uppercase;
+    text-wrap: balance;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin: 36px 0 12px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-soft);
+    margin-bottom: 20px;
+}
+
+.lead {
+    font-size: 20px;
+    line-height: 1.7;
+    color: var(--text);
+    font-weight: 300;
+}
+
+.small,
+p.small {
+    font-size: 14px;
+    color: var(--text-faint);
+    margin-bottom: 12px;
+}
+
+ul.list,
+ol.list {
+    margin: 0 0 24px 22px;
+    color: var(--text-soft);
+    font-size: 17px;
+}
+
+ul.list li,
+ol.list li {
+    margin-bottom: 8px;
+    padding-left: 4px;
+}
+
+ul.list li::marker,
+ol.list li::marker {
+    color: var(--accent);
+}
+
+strong {
+    font-weight: 600;
+    color: var(--ink);
+}
+
+/* links: purple underline, long addresses wrap instead of overflowing */
+a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--accent-mid);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere;
+}
+
+a:hover {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+}
+
+/* ---------- hero ---------- */
+.hero h1 {
+    margin-bottom: 8px;
+}
+
+.tagline {
+    font-size: 15px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 8px 0 24px;
+}
+
+.meta-line {
+    font-size: 14px;
+    color: var(--text-faint);
+    letter-spacing: 0.04em;
+    margin-bottom: 0;
+}
+
+.principle {
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+
+/* ---------- buttons ---------- */
+.button {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    border: 1px solid var(--accent);
+    border-radius: var(--r-sm);
+    padding: 12px 22px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    margin: 8px 12px 8px 0;
+    transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.hero-actions .button {
+    margin: 0;
+}
+
+.button:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    color: #fff;
+}
+
+.button.secondary {
+    background: var(--panel);
+    color: var(--accent);
+    border-color: var(--accent-mid);
+}
+
+.button.secondary:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent-dark);
+}
+
+/* ---------- key figures and cards (rounded boxes) ---------- */
+.figures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 32px 0 8px;
+}
+
+.figure {
+    padding: 20px 18px;
+    border: 1px solid var(--rule);
+    border-radius: var(--r-lg);
+    background: var(--panel);
+}
+
+.figure .num {
+    display: block;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--accent);
+    line-height: 1.2;
+}
+
+.figure .label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-faint);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 6px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.card {
+    display: block;
+    border: 1px solid var(--rule);
+    border-radius: var(--r-lg);
+    padding: 22px 20px;
+    text-decoration: none;
+    color: var(--text);
+    background: var(--panel);
+    transition: border-color 0.15s, background-color 0.15s;
+}
+
+.card:hover {
+    border-color: var(--accent-mid);
+    background: var(--accent-soft);
+    color: var(--text);
+}
+
+/* ---------- tables ---------- */
+.table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 16px 0 28px;
+    border: 1px solid var(--rule);
+    border-radius: var(--r-lg);
+    padding: 4px 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+caption {
+    text-align: left;
+    font-size: 13px;
+    color: var(--text-faint);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 12px 0 8px;
+}
+
+th,
+td {
+    text-align: left;
+    vertical-align: top;
+    padding: 10px 12px 10px 0;
+    border-bottom: 1px solid var(--rule);
+    color: var(--text-soft);
+}
+
+tbody tr:last-child th,
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+th {
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-bottom-color: var(--rule-strong);
+}
+
+td.num,
+th.num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+table.overview th {
+    width: 32%;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-size: 15px;
+    border-bottom-color: var(--rule);
+}
+
+/* ---------- bar charts (no JavaScript) ---------- */
+.bars {
+    margin: 12px 0 32px;
+}
+
+.bar-row {
+    display: grid;
+    grid-template-columns: 130px 1fr 56px;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--text-soft);
+    margin-bottom: 8px;
+}
+
+.bar-track {
+    background: var(--tint);
+    height: 12px;
+    border-radius: var(--r-pill);
+    overflow: hidden;
+}
+
+.bar-fill {
+    background: rgba(127, 127, 127, 0.7); /* tab10 grey at 70%, same palette as the corpus figures */
+    height: 100%;
+    border-radius: var(--r-pill);
+}
+
+.bar-row .count {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+}
+
+/* ---------- notes ---------- */
+.note {
+    background: var(--accent-soft);
+    border-radius: var(--r-lg);
+    padding: 18px 20px;
+    margin: 24px 0;
+}
+
+.note p {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: var(--text);
+}
+
+.note p:last-child {
+    margin-bottom: 0;
+}
+
+/* ---------- numbered steps ---------- */
+.steps {
+    list-style: none;
+    counter-reset: step;
+    margin: 20px 0 28px;
+}
+
+.steps li {
+    counter-increment: step;
+    position: relative;
+    padding: 0 0 22px 52px;
+    color: var(--text-soft);
+    font-size: 17px;
+}
+
+.steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    text-align: center;
+    line-height: 34px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.steps li strong {
+    display: block;
+}
+
+/* ---------- checklist ---------- */
+ul.checklist {
+    list-style: none;
+    margin: 0 0 24px;
+}
+
+ul.checklist li {
+    position: relative;
+    padding: 0 0 12px 32px;
+    color: var(--text-soft);
+    font-size: 17px;
+}
+
+ul.checklist li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid var(--accent);
+    border-radius: 4px;
+}
+
+/* ---------- code, templates, citations ---------- */
+pre,
+code {
+    font-family: var(--mono);
+    font-size: 14px;
+    letter-spacing: 0;
+}
+
+pre {
+    background: var(--tint);
+    border-radius: var(--r-lg);
+    padding: 18px 20px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    color: var(--text);
+    margin: 12px 0 24px;
+}
+
+p.pub-entry {
+    font-size: 15px;
+    color: var(--text-soft);
+    background: var(--tint);
+    border-radius: var(--r-sm);
+    padding: 12px 16px;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+/* ---------- FAQ ---------- */
+details {
+    border-bottom: 1px solid var(--rule);
+}
+
+summary {
+    cursor: pointer;
+    list-style: none;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--ink);
+    padding: 16px 32px 16px 0;
+    position: relative;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: "+";
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--accent);
+}
+
+details[open] summary::after {
+    content: "−";
+}
+
+details p {
+    margin: 0 0 18px;
+}
+
+/* ---------- agreement ---------- */
+.agreement ol {
+    margin: 0 0 20px 22px;
+    color: var(--text-soft);
+    font-size: 16px;
+}
+
+.agreement li {
+    margin-bottom: 8px;
+}
+
+.agreement li::marker {
+    color: var(--accent);
+}
+
+/* ---------- placeholder marker ---------- */
+.todo {
+    background: var(--todo-bg);
+    color: #000;
+    padding: 0 4px;
+    border-radius: 4px;
+}
+
+/* ---------- footer ---------- */
+footer {
+    text-align: center;
+    padding: 32px 16px;
+    background-color: var(--bg);
+    border-top: 1px solid var(--rule);
+}
+
+footer p {
+    font-size: 13px;
+    color: var(--text-faint);
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+}
+
+footer a {
+    color: var(--text-soft);
+}
+
+/* ---------- phones ---------- */
+@media (max-width: 600px) {
+    header {
+        padding: 22px 12px 14px;
+    }
+    .site-title {
+        font-size: 22px;
+        letter-spacing: 0.08em;
+        margin-bottom: 2px;
+    }
+    .site-subtitle {
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        margin-bottom: 12px;
+    }
+    nav ul {
+        gap: 4px 2px;
+    }
+    nav a {
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        padding: 7px 10px;
+    }
+    .content-section {
+        padding: 40px 16px;
+    }
+    h1 {
+        font-size: 28px;
+        margin-bottom: 18px;
+    }
+    h2 {
+        font-size: 21px;
+        margin-bottom: 20px;
+    }
+    h3 {
+        margin-top: 28px;
+    }
+    p,
+    ul.list,
+    ol.list,
+    .steps li,
+    ul.checklist li {
+        font-size: 16px;
+    }
+    .lead {
+        font-size: 18px;
+    }
+    .tagline {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+    .principle {
+        font-size: 24px;
+    }
+    .hero-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hero-actions .button {
+        display: block;
+        width: 100%;
+    }
+    .table-wrap {
+        padding: 2px 12px;
+    }
+    table {
+        font-size: 14px;
+    }
+    .bar-row {
+        grid-template-columns: 108px 1fr 48px;
+        gap: 10px;
+        font-size: 14px;
+    }
+    .steps li {
+        padding-left: 46px;
+    }
+    .steps li::before {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    * {
+        transition: none !important;
+    }
+}
+
+@media print {
+    nav,
+    .button {
+        display: none;
+    }
+}
+
+/* ---------- three-column tables stack on phones ---------- */
+@media (max-width: 600px) {
+    table.stack thead {
+        display: none;
+    }
+    table.stack tr {
+        display: block;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--rule);
+    }
+    table.stack tbody tr:last-child {
+        border-bottom: none;
+    }
+    table.stack td {
+        display: block;
+        border: none;
+        padding: 2px 0;
+    }
+    table.stack td:first-child {
+        font-weight: 600;
+        color: var(--ink);
+    }
+    table.stack td:last-child {
+        color: var(--text-faint);
+        font-size: 13px;
+        margin-top: 4px;
+    }
+}
