@@ -7,7 +7,7 @@
 <meta name="description" content="性、性别认同、性别表达、性取向与关系模式等相关概念的中英文说明。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;700&family=Spectral:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap">
 <style>
 /* Layout: a reference glossary — sticky contents rail on wide screens, one reading column; entries set like dictionary headwords with italic English glosses */
 :root {
@@ -19,10 +19,11 @@
   --rule: #dfe3e0;
   --accent: #2f6b5e;
   --accent-soft: #e4efeb;
-  --display: "Noto Serif SC", "Songti SC", "STSong", serif;
-  --body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
-  --latin: "Spectral", Georgia, "Times New Roman", serif;
-  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --sans: "Albert Sans", "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --display: var(--sans);
+  --body: var(--sans);
+  --latin: var(--sans);
+  --mono: var(--sans);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -39,14 +40,14 @@ html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   background: var(--bg); color: var(--ink);
-  font-family: var(--body); font-size: 16px; line-height: 1.8;
+  font-family: var(--body); font-weight: 300; font-size: 16px; line-height: 1.85; -webkit-font-smoothing: antialiased;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
   padding-block: 0;
 }
 a { color: var(--accent); text-underline-offset: 3px; }
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
-.en { font-family: var(--latin); font-style: italic; font-weight: 400; }
+.en { font-family: var(--latin); font-weight: 300; }
 .wrap { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 56px; padding-block: 56px 72px; }
 @media (max-width: 900px) { .wrap { grid-template-columns: minmax(0, 1fr); gap: 0; padding-block: 32px 56px; } }
 
@@ -62,8 +63,8 @@ nav.toc a:hover { color: var(--accent); }
 
 main { min-width: 0; max-width: 720px; }
 header.top { padding-bottom: 32px; border-bottom: 1px solid var(--rule); margin-bottom: 8px; }
-header.top h1 { font-family: var(--latin); font-weight: 500; font-size: clamp(32px, 6vw, 46px); line-height: 1.15; margin: 0 0 6px; letter-spacing: -.01em; text-wrap: balance; }
-header.top .zh-title { font-family: var(--display); font-size: 18px; color: var(--soft); margin: 0 0 24px; }
+header.top h1 { font-family: var(--latin); font-weight: 300; font-size: clamp(32px, 6vw, 46px); line-height: 1.15; margin: 0 0 6px; letter-spacing: -.01em; text-wrap: balance; }
+header.top .zh-title { font-family: var(--display); font-weight: 300; font-size: 18px; color: var(--soft); margin: 0 0 24px; }
 .lead { font-size: 16px; color: var(--soft); margin: 0 0 14px; }
 .mobile-toc { display: none; font-size: 14px; line-height: 1.9; color: var(--faint); margin-top: 18px; }
 .mobile-toc a { color: var(--soft); }
@@ -73,19 +74,25 @@ header.top .zh-title { font-family: var(--display); font-size: 18px; color: var(
 .group-label { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0 0 4px; }
 .group-label .zh { letter-spacing: .08em; }
 section.sec { margin-top: 28px; scroll-margin-top: 24px; }
-section.sec > h2 { font-family: var(--display); font-weight: 700; font-size: 24px; line-height: 1.4; margin: 0 0 4px; text-wrap: balance; }
-section.sec > h2 .num { font-family: var(--latin); font-weight: 400; color: var(--faint); margin-right: 10px; }
+section.sec > h2 { font-family: var(--display); font-weight: 300; font-size: 24px; line-height: 1.4; margin: 0 0 4px; text-wrap: balance; }
+section.sec > h2 .num { font-family: var(--latin); font-weight: 300; color: var(--faint); margin-right: 10px; }
 section.sec > h2 .en { font-size: 21px; color: var(--soft); }
 .intro { margin: 10px 0 0; }
 .intro p { margin: 0 0 10px; }
-h3.sub { font-family: var(--display); font-weight: 500; font-size: 17px; margin: 30px 0 0; color: var(--ink); }
+h3.sub { font-family: var(--display); font-weight: 400; font-size: 17px; margin: 30px 0 0; color: var(--ink); }
 h3.sub .en { color: var(--soft); font-size: 16px; }
 
 .entry { padding: 18px 0; border-top: 1px solid var(--rule); }
 .entries { margin-top: 14px; border-bottom: 1px solid var(--rule); }
-.entry h4 { margin: 0 0 6px; font-family: var(--display); font-weight: 700; font-size: 18px; line-height: 1.5; }
-.entry h4 .en { font-family: var(--latin); font-weight: 400; color: var(--accent); font-size: 18px; }
-.entry h4 .alt { font-family: var(--body); font-weight: 400; font-size: 14px; color: var(--faint); margin-left: 8px; }
+.entry h4 { margin: 0 0 6px; font-family: var(--display); font-weight: 500; font-size: 18px; line-height: 1.5; }
+.entry h4 .en { font-family: var(--latin); font-weight: 300; color: var(--accent); font-size: 18px; }
+.entry h4 .alt { font-family: var(--body); font-weight: 300; font-size: 14px; color: var(--faint); margin-left: 8px; }
+h5.subsub { font-family: var(--display); font-weight: 400; font-size: 16px; margin: 24px 0 0; color: var(--ink); }
+h6.subsub2 { font-family: var(--body); font-weight: 400; font-size: 14px; margin: 18px 0 0; color: var(--soft); padding-left: 14px; }
+.nested { margin: 14px 0 0 6px; padding-left: 14px; border-left: 1px solid var(--rule); }
+.nested .entry:first-child { border-top: 0; padding-top: 4px; }
+.nested .entry { padding: 14px 0; }
+.nested .entry:last-child { padding-bottom: 0; }
 dl { margin: 0; display: grid; grid-template-columns: 3.2em minmax(0, 1fr); column-gap: 14px; row-gap: 6px; }
 dt { font-size: 12px; letter-spacing: .08em; color: var(--faint); padding-top: 4px; }
 dd { margin: 0; color: var(--soft); min-width: 0; }
@@ -94,14 +101,14 @@ dd { margin: 0; color: var(--soft); min-width: 0; }
 .inline-terms li { background: var(--accent-soft); color: var(--ink); border-radius: 4px; padding: 1px 8px; font-size: 14px; }
 .inline-terms .en { color: var(--accent); }
 
-.kary { font-family: var(--mono); font-size: 14px; display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 12px 0 0; }
+.kary { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 14px; display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 12px 0 0; }
 .kary li { border: 1px solid var(--rule); background: var(--panel); border-radius: 4px; padding: 2px 10px; }
 .kary li.wide { font-family: var(--body); }
 
 .note { margin-top: 56px; background: var(--panel); border: 1px solid var(--rule); border-radius: 6px; padding: 18px 20px; color: var(--soft); }
 .note p { margin: 0; }
 footer.refs { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--faint); }
-footer.refs h2 { font-family: var(--display); font-size: 16px; font-weight: 500; color: var(--ink); margin: 0 0 8px; }
+footer.refs h2 { font-family: var(--display); font-size: 16px; font-weight: 400; color: var(--ink); margin: 0 0 8px; }
 footer.refs ul { margin: 0 0 18px; padding-left: 1.2em; }
 footer.refs li { margin-bottom: 4px; }
 footer.refs p { margin: 0; }
@@ -201,7 +208,7 @@ footer.refs p { margin: 0; }
       <section class="sec" id="s4">
         <h2><span class="num">4</span>性别认同（<span class="en">gender identity</span>）</h2>
         <div class="intro">
-          <p>性别认同（gender identity）是一个人对自身性别的认知和认同。</p>
+          <p>性别认同（gender identity）是一个人对自身性别的认知和认同。性别认同无法从外部观察，可能保持稳定，也可能随时间变化。</p>
           <p>下面两组概念从两个角度描述性别认同，二者可以交叉。跨性别者可以是女人、男人或非二元性别者；非二元性别者也可能认同自己是跨性别者，但不一定使用这个标签。</p>
         </div>
 
@@ -214,7 +221,7 @@ footer.refs p { margin: 0; }
           <article class="entry" id="transgender">
             <h4>跨性别（<span class="en">transgender</span>）</h4>
             <dl>
-              <dt>定义</dt><dd>通常指一个人的性别认同与出生时指定的性别不相符。</dd>
+              <dt>定义</dt><dd>通常指一个人的性别认同与出生时指定的性别不相符。也有定义把它作为统称（<span class="en">umbrella term</span>），包括性别认同或性别表达与基于出生时指定性别的社会期待不同的人。</dd>
               <dt>说明</dt><dd>跨性别者可能进行过也可能没进行过性别确认手术（<span class="en">gender-affirming surgery</span>）。中文也叫变性人，但变性人更对应（<span class="en">transsexual</span>），在不同语境中的使用和接受程度不同，不宜直接作为跨性别的通用同义词。中文的“人妖”一般被认为带有污名化和歧视意味。</dd>
               <dt>相关</dt><dd>
                 <ul class="inline-terms">
@@ -227,6 +234,7 @@ footer.refs p { margin: 0; }
         </div>
 
         <h3 class="sub">4.2 是否属于二元分类（<span class="en">gender binary</span>）</h3>
+        <div class="intro"><p>性别二元分类指一种假定：只有两种生理性别和两种性别，并且生理性别、性别认同和性别表达总是一致。</p></div>
         <div class="entries">
           <article class="entry" id="binary">
             <h4>二元性别（<span class="en">binary gender</span>）</h4>
@@ -250,7 +258,7 @@ footer.refs p { margin: 0; }
           <article class="entry" id="agender">
             <h4>无性别（<span class="en">agender</span>）</h4>
             <dl>
-              <dt>定义</dt><dd>不认同任何性别或认为自己没有性别。</dd>
+              <dt>定义</dt><dd>不认同任何性别或认为自己没有性别。也有定义把它作为统称，包括认为自己没有性别，或认为自己的性别是中性的人。</dd>
               <dt>说明</dt><dd>常被视为非二元性别认同的一种，接近于上面非二元的第二种解释。</dd>
             </dl>
           </article>
@@ -293,27 +301,34 @@ footer.refs p { margin: 0; }
           <p>下面几组标签从不同角度描述吸引，可以同时使用，例如一个人可以既是半性恋又是同性恋。这不是唯一的分类方式。</p>
         </div>
 
-        <h3 class="sub">6.1 按吸引对象的性别及其范围</h3>
+        <h3 class="sub">6.1 区分浪漫吸引（<span class="en">romantic attraction</span>）和性吸引（<span class="en">sexual attraction</span>）</h3>
         <div class="entries">
-          <article class="entry" id="homosexual">
-            <h4>同性恋（<span class="en">gay / lesbian / homosexual</span>）</h4>
-            <dl>
-              <dt>定义</dt><dd>对与自己性别相同的人感到浪漫吸引或性吸引。</dd>
-              <dt>说明</dt><dd>中文也叫同志、弯。英文 <span class="en">gay</span> 有时也统指同性恋。英文里 <span class="en">homosexual</span> 偏医学化，常被认为带有污名化意味，英文媒体指南一般建议改用 <span class="en">gay</span> 或 <span class="en">lesbian</span>。</dd>
-              <dt>相关</dt><dd>
-                <ul class="inline-terms">
-                  <li>女同/女同性恋/拉拉/拉子（<span class="en">lesbian</span>）</li>
-                  <li>男同/男同性恋（<span class="en">gay</span>）</li>
-                </ul>
-              </dd>
-            </dl>
+          <article class="entry" id="aromantic">
+            <h4>无浪漫爱（<span class="en">aromantic</span>）<span class="alt">也说无浪漫倾向</span></h4>
+            <dl><dt>定义</dt><dd>对他人没有感到或感到较低水平的浪漫吸引。</dd></dl>
           </article>
-          <article class="entry" id="heterosexual">
-            <h4>异性恋（<span class="en">heterosexual / straight</span>）</h4>
-            <dl>
-              <dt>定义</dt><dd>通常指对与自己性别不同的人感到浪漫吸引或性吸引。</dd>
-              <dt>说明</dt><dd>中文也说“直”。</dd>
-            </dl>
+          <article class="entry" id="asexual">
+            <h4>无性恋（<span class="en">asexual</span>）</h4>
+            <dl><dt>定义</dt><dd>对他人没有感到或感到较低水平的性吸引。</dd></dl>
+          </article>
+        </div>
+
+        <h3 class="sub">6.2 有性吸引（有性恋，<span class="en">allosexual</span>）</h3>
+        <div class="intro"><p>有性恋（<span class="en">allosexual</span>）指会体验性吸引的人或群体，与无性恋相对。</p></div>
+
+        <h5 class="subsub">6.2.1 按是否与对方的性别相关分</h5>
+        <h6 class="subsub2">6.2.1.1 无关性别</h6>
+        <div class="entries">
+          <article class="entry" id="pansexual">
+            <h4>泛性恋（<span class="en">pansexual</span>）</h4>
+            <dl><dt>定义</dt><dd>可能对任何性别的人产生浪漫吸引或性吸引，吸引与对方的性别无关。</dd></dl>
+          </article>
+        </div>
+        <h6 class="subsub2">6.2.1.2 有关性别，按数量分</h6>
+        <div class="entries">
+          <article class="entry" id="polysexual">
+            <h4>多性恋（<span class="en">polysexual</span>）</h4>
+            <dl><dt>定义</dt><dd>对两种以上性别身份认同的人感到浪漫吸引或性吸引。</dd></dl>
           </article>
           <article class="entry" id="bisexual">
             <h4>双性恋（<span class="en">bisexual</span>）</h4>
@@ -322,60 +337,54 @@ footer.refs p { margin: 0; }
               <dt>说明</dt><dd>按第一种定义，双性恋与泛性恋、多性恋的界限有重叠，不同的人和社群用法不同。</dd>
             </dl>
           </article>
-          <article class="entry" id="pansexual">
-            <h4>泛性恋（<span class="en">pansexual</span>）</h4>
-            <dl><dt>定义</dt><dd>可能对任何性别的人产生浪漫吸引或性吸引，吸引与对方的性别无关。</dd></dl>
-          </article>
-          <article class="entry" id="polysexual">
-            <h4>多性恋（<span class="en">polysexual</span>）</h4>
-            <dl><dt>定义</dt><dd>对两种以上性别身份认同的人感到浪漫吸引或性吸引。</dd></dl>
-          </article>
           <article class="entry" id="monosexual">
             <h4>单性恋（<span class="en">monosexual</span>）</h4>
             <dl>
               <dt>定义</dt><dd>对单一性别的人感到吸引的概括说法。</dd>
               <dt>说明</dt><dd>它是对吸引对象性别范围的一种概括。同性恋、异性恋是常见的例子，但不是唯一可能的情况。</dd>
             </dl>
+            <div class="nested">
+              <article class="entry" id="homosexual">
+                <h4>同性恋（<span class="en">gay / lesbian / homosexual</span>）</h4>
+                <dl>
+                  <dt>定义</dt><dd>对与自己性别相同的人感到浪漫吸引或性吸引。</dd>
+                  <dt>说明</dt><dd>中文也叫同志、弯。英文 <span class="en">gay</span> 有时也统指同性恋。英文里 <span class="en">homosexual</span> 偏医学化，常被认为带有污名化意味，英文媒体指南一般建议改用 <span class="en">gay</span> 或 <span class="en">lesbian</span>。</dd>
+                  <dt>相关</dt><dd>
+                    <ul class="inline-terms">
+                      <li>女同/女同性恋/拉拉/拉子（<span class="en">lesbian</span>）</li>
+                      <li>男同/男同性恋（<span class="en">gay</span>）</li>
+                    </ul>
+                  </dd>
+                </dl>
+              </article>
+              <article class="entry" id="heterosexual">
+                <h4>异性恋（<span class="en">heterosexual / straight</span>）</h4>
+                <dl>
+                  <dt>定义</dt><dd>通常指对与自己性别不同的人感到浪漫吸引或性吸引。</dd>
+                  <dt>说明</dt><dd>中文也说“直”。</dd>
+                </dl>
+              </article>
+            </div>
           </article>
         </div>
 
-        <h3 class="sub">6.2 无性恋光谱（<span class="en">asexual spectrum</span>）</h3>
+        <h5 class="subsub">6.2.2 吸引与对方智力相关</h5>
         <div class="entries">
-          <article class="entry" id="asexual">
-            <h4>无性恋（<span class="en">asexual</span>）</h4>
-            <dl><dt>定义</dt><dd>对他人没有感到或感到较低水平的性吸引。</dd></dl>
+          <article class="entry" id="sapiosexual">
+            <h4>智性恋（<span class="en">sapiosexual</span>）</h4>
+            <dl>
+              <dt>说明</dt><dd>它不是被普遍认可的独立性取向分类：有人把它视为性取向，也有人认为它更接近一种择偶偏好。</dd>
+            </dl>
           </article>
+        </div>
+
+        <h5 class="subsub">6.2.3 情感联结</h5>
+        <div class="entries">
           <article class="entry" id="demisexual">
             <h4>半性恋（<span class="en">demisexual</span>）</h4>
             <dl>
               <dt>定义</dt><dd>个人只有在和对方建立起深厚的情感联系之后，才可能产生性吸引。</dd>
               <dt>说明</dt><dd>很多术语表把它归入无性恋光谱；也有人认为它介于无性恋和有性恋之间，或者认为它描述的是产生吸引的条件，可以和同性恋、异性恋等标签同时使用。</dd>
-            </dl>
-          </article>
-          <article class="entry" id="allosexual">
-            <h4>有性恋（<span class="en">allosexual</span>）</h4>
-            <dl>
-              <dt>定义</dt><dd>指会体验性吸引的人或群体，与无性恋相对。</dd>
-              <dt>说明</dt><dd>它不是与 6.1 中各标签严格平行的一类。</dd>
-            </dl>
-          </article>
-        </div>
-
-        <h3 class="sub">6.3 浪漫取向（<span class="en">romantic orientation</span>）</h3>
-        <div class="entries">
-          <article class="entry" id="aromantic">
-            <h4>无浪漫倾向（<span class="en">aromantic</span>）<span class="alt">也说无浪漫爱</span></h4>
-            <dl><dt>定义</dt><dd>对他人没有感到或感到较低水平的浪漫吸引。</dd></dl>
-          </article>
-        </div>
-
-        <h3 class="sub">6.4 相关或有争议的术语</h3>
-        <div class="entries">
-          <article class="entry" id="sapiosexual">
-            <h4>智性恋（<span class="en">sapiosexual</span>）</h4>
-            <dl>
-              <dt>定义</dt><dd>指吸引与对方的智力相关。</dd>
-              <dt>说明</dt><dd>它不是被普遍认可的独立性取向分类：有人把它视为性取向，也有人认为它更接近一种择偶偏好。</dd>
             </dl>
           </article>
         </div>
@@ -425,10 +434,10 @@ footer.refs p { margin: 0; }
             </dl>
           </article>
           <article class="entry" id="minorities">
-            <h4>性少数（<span class="en">sexual and gender minorities</span>）</h4>
+            <h4>性少数（<span class="en">sexual minorities</span>）</h4>
             <dl>
               <dt>定义</dt><dd>指在性取向、性别认同或性别特征方面属于少数的人群。</dd>
-              <dt>说明</dt><dd>中文“性少数”有时只指性取向上的少数（<span class="en">sexual minorities</span>），有时也包括性别少数，具体范围因语境而异。</dd>
+              <dt>说明</dt><dd>中文“性少数”有时只指性取向上的少数（<span class="en">sexual minorities</span>），有时也包括性别少数，具体范围因语境而异。包括性别少数时，英文常说 <span class="en">sexual and gender minorities</span>。</dd>
             </dl>
           </article>
           <article class="entry" id="diversity">
@@ -516,6 +525,7 @@ footer.refs p { margin: 0; }
       <ul>
         <li><a href="https://www.hrc.org/resources/glossary-of-terms" target="_blank" rel="noopener">Human Rights Campaign, Glossary of Terms</a></li>
         <li><a href="https://handbook.vpcomm.umich.edu/wp-content/uploads/sites/90/2019/04/GLAAD-Media-Reference-Guide-Tenth-Edition.pdf" target="_blank" rel="noopener">GLAAD Media Reference Guide (10th ed.)</a></li>
+        <li><a href="https://lgbt.ucsd.edu/education/Gender%20Justice%20Glossary.html" target="_blank" rel="noopener">UC San Diego LGBT Resource Center, Gender Justice Glossary</a></li>
         <li><a href="https://www.rmit.edu.au/about/schools-colleges/global-urban-and-social-studies/research/social-equity-research-centre/projects/lgbtiqa-multilingual-terminology" target="_blank" rel="noopener">RMIT, LGBTIQA+ Multilingual Terminology</a></li>
         <li><a href="https://www.dictionary.com/e/gender-sexuality/demisexual/" target="_blank" rel="noopener">Dictionary.com, Demisexual</a></li>
         <li><a href="https://en.wikipedia.org/wiki/Intersex_rights_in_Taiwan" target="_blank" rel="noopener">Wikipedia, Intersex rights in Taiwan</a></li>
