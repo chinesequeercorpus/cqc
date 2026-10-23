@@ -63,7 +63,7 @@
                         <tr><th scope="row">Speech genres</th><td>Interviews, podcasts, topical vlogs</td></tr>
                         <tr><th scope="row">Transcription</th><td>Automatic transcription (Whisper), reviewed by trained annotators</td></tr>
                         <tr><th scope="row">Time alignment</th><td>Word and phone level, produced automatically (Montreal Forced Aligner) and checked by hand, stored as Praat TextGrids</td></tr>
-                        <tr><th scope="row">Identity metadata</th><td>Self-described only; separate fields for gender identity, trans status, sex characteristics, and sexual orientation</td></tr>
+                        <tr><th scope="row">Identity metadata</th><td>Self-described only; separate fields for sex and gender identity, and sexual orientation</td></tr>
                         <tr><th scope="row">Access</th><td>Controlled, under the <a href="agreement.html">CQC Data Use Agreement</a></td></tr>
                         <tr><th scope="row">Documentation</th><td><a href="datasheet.html">Datasheet</a></td></tr>
                     </tbody>
@@ -118,7 +118,7 @@
                 <li><strong>Audio preparation</strong>Recordings converted to a single standard audio format (details in the datasheet).</li>
                 <li><strong>Separating speakers</strong>In two-speaker recordings, speaker diarization (pyannote.audio) separated the two voices; segments assigned to the target speaker were checked by hand.</li>
                 <li><strong>Transcription</strong>Speech transcribed automatically with Whisper, then reviewed by trained annotators.</li>
-                <li><strong>Text clean-up</strong>Transcripts converted to simplified characters; punctuation removed. Before transcripts are distributed, personal names, place names, and similar identifying details are replaced with placeholders such as ［人名］ and ［城市］.</li>
+                <li><strong>Text clean-up</strong>Transcripts converted to simplified characters; punctuation removed.</li>
                 <li><strong>Time alignment</strong>Forced alignment with the Montreal Forced Aligner marked the start and end of each word and phone, producing Praat TextGrids; the boundaries were then checked by hand.</li>
             </ol>
         </section>
@@ -140,7 +140,7 @@
 
         <section class="content-section" id="statistics">
             <h2>Statistics</h2>
-            <p class="small">All figures are percentages of the 54 speakers. Identity figures are based on how speakers described themselves, not on categories assigned by researchers.</p>
+            <p class="small">Identity figures are based on how speakers described themselves, not on categories assigned by researchers.</p>
             <h3>Speech duration</h3>
             <div class="bars">
                 <div class="bar-row"><span>5–10 min</span><div class="bar-track"><div class="bar-fill" style="width:56.5%"></div></div><span class="count">48.1%</span></div>
@@ -157,7 +157,7 @@
             <p class="small">In-between: planned or topic-guided speech that was not read from a prepared script.</p>
             <h3>Sex, gender, and sexuality</h3>
             <div style="display: flex; flex-wrap: wrap; gap: 16px; margin: 16px 0 32px;">
-                <img src="pie_gender.svg" alt="Pie chart, sex and gender identities: intersex 1.9%, female (cisgender woman) 11.1%, male (cisgender man) 40.7%, trans man (FTM) 18.5%, trans woman (MTF) 25.9%, non-binary 1.9%." style="display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: var(--r-lg); flex: 1 1 260px; min-width: 0;">
+                <img src="pie_gender.svg" alt="Pie chart, sex and gender identities: intersex 1.9%, female (cis woman) 11.1%, male (cis man) 40.7%, trans man (FTM) 18.5%, trans woman (MTF) 25.9%, non-binary 1.9%." style="display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: var(--r-lg); flex: 1 1 260px; min-width: 0;">
                 <img src="pie_orientation.svg" alt="Pie chart, sexual orientation: asexual 9.3%, pansexual 7.4%, bisexual 1.9%, lesbian 5.6%, gay 37.0%, heterosexual 7.4%, no information 31.5%." style="display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: var(--r-lg); flex: 1 1 260px; min-width: 0;">
             </div>
             <h3>Speaker embeddings</h3>
@@ -176,7 +176,7 @@
             <h2>Limitations</h2>
             <p>CQC includes speakers who met the inclusion criteria and who published relevant content on two video platforms. Who ends up in the corpus is therefore shaped by platform use, by who chooses to speak publicly, by the search terms used, and by recording quality. Report sample composition, group sizes, and limitations, and interpret results with care.</p>
             <ul class="list">
-                <li><strong>Representation.</strong> Cis women, bisexual, non-binary, and older speakers are few.</li>
+                <li><strong>Representation.</strong> Cis women, bisexual, non-binary, intersex, and older speakers are few.</li>
                 <li><strong>Platforms.</strong> Bilibili and YouTube users are not representative of Mandarin speakers in general.</li>
                 <li><strong>Publicness.</strong> CQC includes only people willing to speak publicly online about their identity.</li>
                 <li><strong>Genre.</strong> Most speech is in-between; highly scripted and spontaneous speech are limited.</li>
